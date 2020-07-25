@@ -1,0 +1,33 @@
+version: '3'
+services:
+  grpc-app:
+    build:
+      context: ./..
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - main-network
+
+  envoy:
+    build:
+      context: ./envoy
+      dockerfile: Dockerfile
+    ports:
+      - "9901:9901"
+      - "8081:8081"
+    networks:
+      - main-network
+
+  frontend:
+    build:
+      context: ../third_party/frontend
+      dockerfile: Dockerfile
+    ports:
+    - 3000:80
+    networks:
+      - main-network
+
+networks:
+  main-network:
+    driver: bridge
