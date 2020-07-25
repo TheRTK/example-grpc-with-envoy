@@ -1,6 +1,9 @@
 # example-grpc-with-envoy
 
-## Requirement
+Simple example with grpc+proxy. 
+
+## Requirements
+
 [docker](https://docs.docker.com/get-docker/) 
 
 [docker-compose](https://docs.docker.com/compose/)
@@ -8,6 +11,7 @@
 ## Start
 ```
 git clone git@github.com:TheRTK/example-grpc-with-envoy.git
+cd example-grpc-with-envoy
 docker-compose -f build/docker-compose.yml up -d
 ```
 
@@ -16,4 +20,3 @@ docker-compose -f build/docker-compose.yml up -d
  - `8080` - GRPC-native endpoint
  - `8081` - Envoy proxy (GRPC-web endpoint)
  - `9901` - Envoy Admin
- 
