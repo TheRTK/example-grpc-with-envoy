@@ -34,7 +34,7 @@ function start() {
         messageService.getMessage(request, {}, (err, response) => {
             if(err) {
                 console.error(err);
-                return addLogText(logArea, `ERROR: ${err.text}`)
+                return addLogText(logArea, `ERROR: ${err.message}`)
             } else {
                 return addLogText(logArea, `New response: "${response.getMessage()}"`)
             }
